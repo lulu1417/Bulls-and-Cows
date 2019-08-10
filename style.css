@@ -18,7 +18,7 @@
             }
 
             .full-height {
-                height: 130vh;
+                height: 110vh;
             }
 
             .flex-center {
@@ -54,7 +54,7 @@
             .rule{
                 font-size: 23px;
                 text-align: center;
-                color: #636b6f;
+                color: #a7aab0;
                 font-weight: 800;
             }
             .content{

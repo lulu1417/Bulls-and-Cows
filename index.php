@@ -25,6 +25,10 @@ session_start();
                     <div class="content">
                     <body OnLoad="document.form1.subject.focus();">
                     <form name="form1" action="guess.php" method="post">
+                        <p>Answer Register -> <input type="text" name="reg1" size="1" autocomplete="off" value="<?=$_SESSION["reg1"]?>">
+                            <input type="text" name="reg2" size="1" autocomplete="off" value="<?=$_SESSION["reg2"]?>" >
+                            <input type="text" name="reg3" size="1" autocomplete="off" value="<?=$_SESSION["reg3"]?>">
+                            <input type="text" name="reg4" size="1" autocomplete="off" value="<?=$_SESSION["reg4"]?>"></p>
                         	<p>Input Your Guess Here ->  <input type="text" name="subject" maxlength="4" autocomplete="off" ></p>
                         	<p><input type="submit" name="submit" value="GUESS">
 
@@ -48,19 +52,27 @@ session_start();
                             //show record
                             include "db.php";
                             $ans = $_SESSION["answer"];
+                            $sql1 = "select * from note ";
+                            $result = mysqli_query($db, $sql1);
+                            $space = "&nbsp&nbsp&nbsp&nbsp";
+//                            while ($rs = mysqli_fetch_assoc($result)) {
+/*<!--                            <p>Answer Register -> <input type="text" name="reg1" size="1" autocomplete="off" value="--><?//=$rs[reg1]?><!--" >-->*/
+/*<!--                                <input type="text" name="reg2" size="1" autocomplete="off" value="--><?//=$rs[reg2]?><!--" >-->*/
+/*<!--                                <input type="text" name="reg3" size="1" autocomplete="off" value="--><?//=$rs[reg3]?><!--">-->*/
+/*<!--                                <input type="text" name="reg4" size="1" autocomplete="off" value="--><?//=$rs[reg4]?><!--"></p>-->*/
+//<!--                            -->
                             $sql = "select * from guess ORDER BY id DESC ";
                             $result = mysqli_query($db, $sql);
-
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "[" . $row['id']."]&nbsp";
-                                echo "&nbsp&nbsp&nbsp&nbsp" . nl2br($row['guess']);
-                                echo "&nbsp&nbsp&nbsp&nbsp" . $row['hint'] . "<br>";
+                                echo $space . nl2br($row['guess']);
+                                echo $space . $row['hint'] . "<br>";
                                 echo "<hr>";
                             }
                             for($i=0;$i<9;$i++){
                                 echo "&nbsp";
                             }
-                            echo "Guess &nbsp&nbsp Result";
+//                            echo "Guess &nbsp&nbsp Result";
                             echo "<br>";
                             echo '<div class="bottom left position-abs content">';
                             ?>

@@ -2,9 +2,12 @@
 include 'db.php';
 session_start();
 $sql1 = "truncate guess;";
-$sql2 = "truncate note;";
 $_SESSION['answer'] = null;
-if (!mysqli_query($db, $sql1) || !mysqli_query($db, $sql2)) {
+$_SESSION["reg1"] = null;
+$_SESSION["reg2"] = null;
+$_SESSION["reg3"] = null;
+$_SESSION["reg4"] = null;
+if (!mysqli_query($db, $sql1) ) {
     echo "truncate error";
     die(mysqli_error());
 }else{

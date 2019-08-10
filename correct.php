@@ -14,7 +14,7 @@ session_start();
     <div class="content">
         <div class="m-b-md">
             <div class="title">
-                Answer Correct!!<br>Congratulations ！！
+                Answer Correct<br>Congratulations ！！
                 <?="
                 <script>
                     setTimeout(function(){window.location.href='restart.php';},2000);

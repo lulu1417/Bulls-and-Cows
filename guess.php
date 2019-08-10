@@ -5,7 +5,10 @@ include "judge.php";
 include "style.css";
 session_start();
 	$guess = $_POST["subject"];
-    $i = 0;
+	$reg1 = $_SESSION["reg1"] = $_POST["reg1"]; $reg2 = $_SESSION["reg2"] = $_POST["reg2"]; $reg3 = $_SESSION["reg3"] = $_POST["reg3"]; $reg4 = $_SESSION["reg4"]  = $_POST["reg4"];
+
+	//$reg1 = 1; $reg2 =2; $reg3 =3; $reg4 =4;
+$i = 0;
 	while($i<10){
 
 	    $i++;
@@ -23,10 +26,9 @@ session_start();
     }else{
         $hint = $judge->check($guess,$ans);
         $answer = implode( $ans);
-        $sql = "INSERT guess(answer, guess, hint) VALUES ('$answer', '$guess', '$hint')";
-        if (!mysqli_query($db, $sql)) {
+        $sql1 = "INSERT guess(answer, guess, hint) VALUES ('$answer', '$guess', '$hint')";
+        if (!mysqli_query($db, $sql1)) {
             echo "insert error";
-            die(mysqli_error());
         }else if($hint == "Answer Correct"){
             header("location:correct.php");
         }

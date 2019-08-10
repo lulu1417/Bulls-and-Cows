@@ -25,9 +25,5 @@ while ($rs = mysqli_fetch_array($result)) {?>
                             <input type="checkbox" name="number" id="8" value="<?=$rs[8]?>"/>
                             <label for="9">9</label>
                             <input type="checkbox" name="number" id="9" value="<?=$rs[9]?>"/>
-                            <p>Answer Register -> <input type="text" name="reg1" size="1" autocomplete="off" value="<?=$rs[reg1]?>" >
-                                <input type="text" name="reg2" size="1" autocomplete="off" value="<?=$rs[reg2]?>" >
-                                <input type="text" name="reg3" size="1" autocomplete="off" value="<?=$rs[reg3]?>">
-                                <input type="text" name="reg4" size="1" autocomplete="off" value="<?=$rs[reg4]?>"></p>
                         <?php}?>
 }

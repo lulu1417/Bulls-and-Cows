@@ -21,7 +21,7 @@ session_start();
     }
 
     if(strlen($guess) < 4 ){
-        header("location:index.php");
+        header("location:main.php");
     }else{
         $hint = $judge->check($guess,$ans);
         $answer = implode( $ans);
@@ -33,6 +33,6 @@ session_start();
             header("location:correct.php");
         }
         else{
-            header("location:index.php");
+            header("location:main.php");
         }
     }

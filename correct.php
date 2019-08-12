@@ -3,6 +3,7 @@
 include 'db.php';
 include 'style.css';
 session_start();
+$name = $_SESSION["name"];
 $sql1 = "select * from guess where ( hint='Answer Correct')";
 $result = mysqli_query($db, $sql1);
 $row = mysqli_fetch_assoc($result);
@@ -15,7 +16,7 @@ if($totalTime > 60){
 }
 $spentSec = ($_SESSION["endTime"] - $_SESSION["startTime"])%60;
 $total = $times + $spentMin;
-$sql2 = "INSERT rank(times, min, sec, total) VALUES ('$times', '$spentMin', '$spentSec', '$total')";
+$sql2 = "INSERT rank(name, times, min, sec, total) VALUES ('$name','$times', '$spentMin', '$spentSec', '$total')";
 mysqli_query($db, $sql2);
 ?>
 
@@ -30,7 +31,7 @@ mysqli_query($db, $sql2);
         <div class="m-b-md">
             <div class="title">
 
-                <?="Answer Correct, Congratulations ！！";
+                <?="Answer Correct, Congratulations ！！".$name;
                 echo"<br>You spent ".$spentMin. " minutes and ".$spentSec." seconds.";
                 header("Refresh:5;url=rank.php");
 

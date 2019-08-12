@@ -21,7 +21,6 @@ $result = mysqli_query($db, $sql);?>
 <div class="rank">
 <?php
 $i = 1;
-if($row = mysqli_fetch_assoc($result))
 echo "$space  &nbsp&nbsp&nbsp&nbsp Times &nbsp&nbsp Time "."<br>";
 while ($row = mysqli_fetch_assoc($result)) {
     echo "No. $i&nbsp&nbsp";

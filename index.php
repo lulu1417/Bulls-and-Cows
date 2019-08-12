@@ -26,15 +26,15 @@ session_start();
             <body OnLoad="document.form1.subject.focus();">
             <form name="form1" action="guess.php" method="post">
 
-                <p><img src="image/check.png" width="23px">&nbsp&nbsp<input type="text" name="sure"  autocomplete="off" value="<?= $_SESSION["sure"] ?>"></p>
-                <p><img src="image/close.png"width="23px">&nbsp&nbsp<input type="text" name="no"  autocomplete="off" value="<?= $_SESSION["no"] ?>"></p>
+                <p><img src="image/check.png" width="23px">&nbsp&nbsp<input style="background: #adc4b2" type="text" name="sure"  autocomplete="off" value="<?= $_SESSION["sure"] ?>">&nbsp&nbsp<img src="image/close.png"width="23px">&nbsp&nbsp<input style="background:#e0c5c8" type="text" name="no"  autocomplete="off" value="<?= $_SESSION["no"] ?>"></p>
 
                 <p><img src="image/post-it.png"width="34px">&nbsp&nbsp
-                    <input type="text" name="reg1" size="1" autocomplete="off" value="<?= $_SESSION["reg1"] ?>">
-                    <input type="text" name="reg2" size="1" autocomplete="off" value="<?= $_SESSION["reg2"] ?>">
-                    <input type="text" name="reg3" size="1" autocomplete="off" value="<?= $_SESSION["reg3"] ?>">
-                    <input type="text" name="reg4" size="1" autocomplete="off" value="<?= $_SESSION["reg4"] ?>"></p>
-                <p>Your answer -> <input type="text" name="subject" maxlength="4" autocomplete="off"></p>
+                    <input  style="background: #e3d8c5" type="text" name="reg1" size="1" autocomplete="off" value="<?= $_SESSION["reg1"] ?>">
+                    <input  style="background: #e3d8c5" type="text" name="reg2" size="1" autocomplete="off" value="<?= $_SESSION["reg2"] ?>">
+                    <input  style="background: #e3d8c5" type="text" name="reg3" size="1" autocomplete="off" value="<?= $_SESSION["reg3"] ?>">
+                    <input  style="background: #e3d8c5" type="text" name="reg4" size="1" autocomplete="off" value="<?= $_SESSION["reg4"] ?>"></p>
+
+                <p>Input your guess<img src="image/right-arrow.png" width="23px"> <input type="text" name="subject" maxlength="4" autocomplete="off"></p>
                 <p><input type="submit" name="submit" value="GUESS">
 
                     <style>
@@ -42,7 +42,7 @@ session_start();
                             padding: 5px 15px;
                             background: #89a4b0;
                             border: 0 none;
-                            f cursor: pointer;
+                            cursor: pointer;
                             -webkit-border-radius: 5px;
                             font-family: 'Nunito', sans-serif;
                             font-weight: 700;

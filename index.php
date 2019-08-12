@@ -26,10 +26,10 @@ session_start();
             <body OnLoad="document.form1.subject.focus();">
             <form name="form1" action="guess.php" method="post">
 
-                <p><img src="check.png" width="23px">&nbsp&nbsp<input type="text" name="sure"  autocomplete="off" value="<?= $_SESSION["sure"] ?>"></p>
-                <p><img src="close.png"width="23px">&nbsp&nbsp<input type="text" name="no"  autocomplete="off" value="<?= $_SESSION["no"] ?>"></p>
+                <p><img src="image/check.png" width="23px">&nbsp&nbsp<input type="text" name="sure"  autocomplete="off" value="<?= $_SESSION["sure"] ?>"></p>
+                <p><img src="image/close.png"width="23px">&nbsp&nbsp<input type="text" name="no"  autocomplete="off" value="<?= $_SESSION["no"] ?>"></p>
 
-                <p><img src="post-it.png"width="34px">&nbsp&nbsp
+                <p><img src="image/post-it.png"width="34px">&nbsp&nbsp
                     <input type="text" name="reg1" size="1" autocomplete="off" value="<?= $_SESSION["reg1"] ?>">
                     <input type="text" name="reg2" size="1" autocomplete="off" value="<?= $_SESSION["reg2"] ?>">
                     <input type="text" name="reg3" size="1" autocomplete="off" value="<?= $_SESSION["reg3"] ?>">

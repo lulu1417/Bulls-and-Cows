@@ -1,5 +1,6 @@
 <?php
 	class judge
+
     {
         public $MAX_LENGTH = 4;
         function answer()
@@ -16,7 +17,7 @@
             $A = 0;
             $ans_appear_times[10] = array(0, 0, 0, 0, 0,
                               0, 0, 0, 0, 0);
-            $data_appear_times[10] = array(0, 0, 0, 0, 0,
+            $guess_appear_times[10] = array(0, 0, 0, 0, 0,
                                0, 0, 0, 0, 0);
     //calculate A
         for($i=0; $i< $this->MAX_LENGTH; $i++) {
@@ -26,17 +27,16 @@
         }
         else {
             $ans_appear_times[$ans[$i]]++;
-            $data_appear_times[$guess[$i]]++;
+            $guess_appear_times[$guess[$i]]++;
         }
     }
-  // calculate B
-    $B = 0;
+    $B = 0; //1345 1314
     for($i=0; $i<10; $i++) {
-        if($data_appear_times[$i] >= $ans_appear_times[$i]) {
+        if($guess_appear_times[$i] >= $ans_appear_times[$i]) {
             $B += $ans_appear_times[$i];
         }
         else {
-            $B += $data_appear_times[$i];
+            $B += $guess_appear_times[$i];
         }
     }
     if($A==$this->MAX_LENGTH && $B==0)	{
@@ -48,4 +48,5 @@
     return $hint;
         }
     }
+
 	

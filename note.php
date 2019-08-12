@@ -5,7 +5,7 @@ $query = "SELECT * FROM note";
 $result = mysqli_query($db, $query);
 while ($rs = mysqli_fetch_array($result)) {?>
 
-    <label for="0">0</label>
+                            <label for="0">0</label>
                             <input type="checkbox" name="number" id="0" value="<?=$rs[0]?>" />
                             <label for="1">1</label>
                             <input type="checkbox" name="number" id="1" value="<?=$rs[1]?>"/>

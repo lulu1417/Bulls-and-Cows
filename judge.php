@@ -30,7 +30,7 @@
             $guess_appear_times[$guess[$i]]++;
         }
     }
-    $B = 0; //1345 1314
+    $B = 0;
     for($i=0; $i<10; $i++) {
         if($guess_appear_times[$i] >= $ans_appear_times[$i]) {
             $B += $ans_appear_times[$i];

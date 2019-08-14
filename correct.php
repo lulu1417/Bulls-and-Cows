@@ -1,7 +1,7 @@
 <title>Bulls and Cows</title>
 <?php
 include 'db.php';
-include 'style.css';
+include 'style.html';
 session_start();
 $name = $_SESSION["name"];
 $sql1 = "select * from guess where ( hint='Answer Correct')";
@@ -15,7 +15,7 @@ if($totalTime > 60){
     $spentMin = 0;
 }
 $spentSec = ($_SESSION["endTime"] - $_SESSION["startTime"])%60;
-$total = $times + $spentMin;
+$total = $times + $spentMin + ($spentSec/100);
 $sql2 = "INSERT rank(name, times, min, sec, total) VALUES ('$name','$times', '$spentMin', '$spentSec', '$total')";
 mysqli_query($db, $sql2);
 ?>
@@ -31,7 +31,7 @@ mysqli_query($db, $sql2);
         <div class="m-b-md">
             <div class="title">
 
-                <?="Answer Correct, Congratulations ！！".$name;
+                <?="Answer Correct, <br> Congratulations ".$name."！！";
                 echo"<br>You spent ".$spentMin. " minutes and ".$spentSec." seconds.";
                 header("Refresh:5;url=rank.php");
 

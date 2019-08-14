@@ -2,7 +2,7 @@
 <?php
 include "db.php";
 include "judge.php";
-include "style.css";
+include "style.html";
 session_start();
 	$guess = $_POST["subject"];
     $no = $_SESSION["no"] = $_POST["no"]; $sure = $_SESSION["sure"] = $_POST["sure"];

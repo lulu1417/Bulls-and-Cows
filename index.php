@@ -1,6 +1,6 @@
 <title>Login</title>
 <?php
-include 'style.css';
+include 'style.html';
 ?>
 <body>
      <div class="flex-center position-ref full-height">
@@ -8,7 +8,7 @@ include 'style.css';
                     <a href="restart.php">Restart</a>
                     <a href="rank.php">RANK</a>
                 </div>
-      <div class="content">
+      <div class="login">
                 <div class="m-b-md">
                     <body OnLoad="document.login.name.focus();">
                     <form name="login" action="main.php" method="post">
@@ -24,7 +24,7 @@ include 'style.css';
                     <style>
                         input {
                             padding:5px 15px;
-                            background:#FFCCCC;
+                            background:#89a4b0;
                             border:0 none;f
                             cursor:pointer;
                             -webkit-border-radius: 5px;

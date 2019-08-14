@@ -1,4 +1,4 @@
-<title>Bulls and Cows</title>
+<title>Congratulations</title>
 <?php
 include 'db.php';
 include 'style.html';

@@ -33,9 +33,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         echo '<div class="player__times">'.$row['times']."</div>";
                         echo '<div class="player__time">'.$row['min'].":".$row['sec']."</div>";
                         echo '</div>';
-//    echo "<hr>";
     $i++;
 }
-
 header("Refresh:5;url=restart.php")
 ?>

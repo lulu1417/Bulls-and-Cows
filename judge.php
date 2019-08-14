@@ -12,6 +12,7 @@
                 }
                 return $ans;
         }
+
         function check($guessString, $ans){
             $guess = str_split ( $guessString);
             $A = 0;
@@ -30,6 +31,7 @@
             $guess_appear_times[$guess[$i]]++;
         }
     }
+    //calculate B
     $B = 0;
     for($i=0; $i<10; $i++) {
         if($guess_appear_times[$i] >= $ans_appear_times[$i]) {

@@ -79,9 +79,9 @@ if (!$_SESSION["name"]) {
 
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<div class="player">';
-            echo '<div class="player__rank">' . $row['id'] . "</div>";
-            echo '<div class="player__name">' . $row['guess'] . "</div>";
-            echo '<div class="player__times">' . $row['hint'] . "</div>";
+            echo '<div class="player__id">' . $row['id'] . "</div>";
+            echo '<div class="player__guess">' . $row['guess'] . "</div>";
+            echo '<div class="player__hint">' . $row['hint'] . "</div>";
             echo '</div>';
         }
     }

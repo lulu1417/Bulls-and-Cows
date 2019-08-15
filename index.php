@@ -10,7 +10,6 @@ $_SESSION = array();
 <body>
      <div class="flex-center position-ref full-height">
                 <div class="top-right home">
-                    <a href="restart.php">Restart</a>
                     <a href="rank.php">RANK</a>
                 </div>
       <div class="login">

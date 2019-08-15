@@ -2,7 +2,7 @@
 <body>
 <div class="flex-center position-ref full-height ">
     <div class="top-right home">
-        <a href="restart.php">Restart</a>
+        <a href="index.php">Restart</a>
     </div>
 
     <div class="contentR m-b-md">
@@ -35,5 +35,5 @@ while ($row = mysqli_fetch_assoc($result)) {
                         echo '</div>';
     $i++;
 }
-header("Refresh:5;url=restart.php")
+header("Refresh:5;url=index.php")
 ?>

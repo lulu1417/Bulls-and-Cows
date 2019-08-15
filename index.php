@@ -1,6 +1,11 @@
 <title>Login</title>
 <?php
+session_start();
 include 'style.html';
+include 'db.php';
+$sql1 = "truncate guess;";
+mysqli_query($db, $sql1);
+$_SESSION = array();
 ?>
 <body>
      <div class="flex-center position-ref full-height">

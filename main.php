@@ -11,7 +11,7 @@ if (!$_SESSION["name"]) {
 
 <body>
 <nav class="top-right home">
-    <a href="restart.php">Restart</a>
+    <a href="index.php">Restart</a>
     <a href="rank.php">RANK</a>
 </nav>
 <section>

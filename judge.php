@@ -33,7 +33,7 @@
     }
     //calculate B
     $B = 0;
-    for($i=0; $i<10; $i++) {
+    for($i=0; $i<10; $i++) { //4404 1345
         if($guess_appear_times[$i] >= $ans_appear_times[$i]) {
             $B += $ans_appear_times[$i];
         }

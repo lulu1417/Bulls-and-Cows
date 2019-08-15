@@ -4,7 +4,7 @@ include 'style.html';
 include 'judge.php';
 session_start();
 if (!$_SESSION["name"]) {
-    $name = $_SESSION["name"] = $_POST["name"];
+	$name = $_SESSION["name"] = $_POST["name"];
 }
 
 ?>
@@ -20,7 +20,7 @@ if (!$_SESSION["name"]) {
         Number Guessing
     </h1>
     <div class="rule ">
-        <p>規則：猜四位數字，數字包含0~9（可重複）</p>
+        <p>規則：猜四位數字，範圍介於0~9（可重複）</p>
         <p>數字與位置正確為A，數字正確但位置不正確則為B</p>
         <p>Ex. 正解為1341，猜1354則會得到線索2A1B</p>
 
@@ -34,12 +34,12 @@ if (!$_SESSION["name"]) {
                 <p><input type="submit" name="submit" value="Guess"> <input type="reset" name="Reset" value="Reset">
             </section>
                 <p><strong>You can make notes here️</strong></p>
-            <p>✔️&nbsp;&nbsp;<input style="background: #adc4b2" type="text" name="sure" autocomplete="off" value="<?= $_SESSION["sure"] ?>">
-                &nbsp✖️&nbsp;&nbsp;<input style="background:#e0c5c8" type="text" name="no" autocomplete="off" value="<?= $_SESSION["no"] ?>"></p>
-                ✏️&nbsp;<input style="background: #e3d8c5" type="text" name="reg1" size="1" autocomplete="off" value="<?= $_SESSION["reg1"] ?>">
-                <input style="background: #e3d8c5" type="text" name="reg2" size="1" autocomplete="off" value="<?= $_SESSION["reg2"] ?>">
-                <input style="background: #e3d8c5" type="text" name="reg3" size="1" autocomplete="off" value="<?= $_SESSION["reg3"] ?>">
-                <input style="background: #e3d8c5" type="text" name="reg4" size="1" autocomplete="off" value="<?= $_SESSION["reg4"] ?>">
+            <p>✔️&nbsp;&nbsp;<input style="background: #adc4b2" type="text" name="sure" autocomplete="off" value="<?=$_SESSION["sure"]?>">
+                &nbsp✖️&nbsp;&nbsp;<input style="background:#e0c5c8" type="text" name="no" autocomplete="off" value="<?=$_SESSION["no"]?>"></p>
+                ✏️&nbsp;<input style="background: #e3d8c5" type="text" name="reg1" size="1" autocomplete="off" value="<?=$_SESSION["reg1"]?>">
+                <input style="background: #e3d8c5" type="text" name="reg2" size="1" autocomplete="off" value="<?=$_SESSION["reg2"]?>">
+                <input style="background: #e3d8c5" type="text" name="reg3" size="1" autocomplete="off" value="<?=$_SESSION["reg3"]?>">
+                <input style="background: #e3d8c5" type="text" name="reg4" size="1" autocomplete="off" value="<?=$_SESSION["reg4"]?>">
 
             </p>
 
@@ -64,28 +64,29 @@ if (!$_SESSION["name"]) {
 
 </body>
         <?php
-        if($_SESSION["answer"]) {?>
+if ($_SESSION["answer"]) {
+	?>
 <div class="hint" style="
     width: 50%;
 ">
     <?php
-    //show record
-        include "db.php";
-        $ans = $_SESSION["answer"];
-        $sql1 = "select * from note ";
-        $result = mysqli_query($db, $sql1);
-        $sql = "select * from guess ORDER BY id DESC ";
-        $result = mysqli_query($db, $sql);
+//show record
+	include "db.php";
+	$ans = $_SESSION["answer"];
+	$sql1 = "select * from note ";
+	$result = mysqli_query($db, $sql1);
+	$sql = "select * from guess ORDER BY id DESC ";
+	$result = mysqli_query($db, $sql);
 
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<div class="player">';
-            echo '<div class="player__id">' . $row['id'] . "</div>";
-            echo '<div class="player__guess">' . $row['guess'] . "</div>";
-            echo '<div class="player__hint">' . $row['hint'] . "</div>";
-            echo '</div>';
-        }
-    }
-    ?>
+	while ($row = mysqli_fetch_assoc($result)) {
+		echo '<div class="player">';
+		echo '<div class="player__id">' . $row['id'] . "</div>";
+		echo '<div class="player__guess">' . $row['guess'] . "</div>";
+		echo '<div class="player__hint">' . $row['hint'] . "</div>";
+		echo '</div>';
+	}
+}
+?>
 
 </div>
 

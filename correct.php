@@ -23,7 +23,7 @@ mysqli_query($db, $sql2);
 <body>
 <div class="flex-center position-ref full-height ">
     <div class="top-right home">
-        <a href="restart.php">Restart</a>
+        <a href="index.php">Restart</a>
         <a href="rank.php">RANK</a>
     </div>
 

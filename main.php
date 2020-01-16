@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include 'style.html';
+include 'style.css';
 include 'judge.php';
 if (!$_SESSION["name"]) {
 	$name = $_SESSION["name"] = $_POST["name"];

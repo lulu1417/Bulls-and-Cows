@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'style.html';
+include 'style.css';
 include 'db.php';
 $sql1 = "truncate guess;";
 mysqli_query($db, $sql1);

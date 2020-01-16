@@ -1,8 +1,8 @@
-<title>Congratulations</title>
+
 <?php
+session_start();
 include 'db.php';
 include 'style.html';
-session_start();
 $name = $_SESSION["name"];
 $sql1 = "select * from guess where ( hint='Answer Correct')";
 $result = mysqli_query($db, $sql1);
@@ -19,7 +19,7 @@ $total = $times + $spentMin + ($spentSec/100);
 $sql2 = "INSERT rank(name, times, min, sec, total) VALUES ('$name','$times', '$spentMin', '$spentSec', '$total')";
 mysqli_query($db, $sql2);
 ?>
-
+<title>Congratulations</title>
 <body>
 <div class="flex-center position-ref full-height ">
     <div class="top-right home">

@@ -16,10 +16,8 @@
         function check($guessString, $ans){
             $guess = str_split ( $guessString);
             $A = 0;
-            $ans_appear_times[10] = array(0, 0, 0, 0, 0,
-                              0, 0, 0, 0, 0);
-            $guess_appear_times[10] = array(0, 0, 0, 0, 0,
-                               0, 0, 0, 0, 0);
+            $ans_appear_times[10] = array();
+            $guess_appear_times[10] = array();
     //calculate A
         for($i=0; $i< $this->MAX_LENGTH; $i++) {
 

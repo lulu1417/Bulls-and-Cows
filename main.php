@@ -1,15 +1,15 @@
-<title>Bulls and Cows</title>
+
 <?php
+session_start();
 include 'style.html';
 include 'judge.php';
-session_start();
 if (!$_SESSION["name"]) {
 	$name = $_SESSION["name"] = $_POST["name"];
 }
 
 ?>
 
-<body>
+<body<title>Bulls and Cows</title>>
 <nav class="top-right home">
     <a href="index.php">Restart</a>
     <a href="rank.php">RANK</a>
@@ -33,9 +33,10 @@ if (!$_SESSION["name"]) {
                     <input type="text" name="subject" maxlength="4" autocomplete="off"></p>
                 <p><input type="submit" name="submit" value="Guess"> <input type="reset" name="Reset" value="Reset">
             </section>
+<!--            筆記區-->
                 <p><strong>You can make notes here️</strong></p>
             <p>✔️&nbsp;&nbsp;<input style="background: #adc4b2" type="text" name="sure" autocomplete="off" value="<?=$_SESSION["sure"]?>">
-                &nbsp✖️&nbsp;&nbsp;<input style="background:#e0c5c8" type="text" name="no" autocomplete="off" value="<?=$_SESSION["no"]?>"></p>
+               <p> &nbsp✖️&nbsp;&nbsp;<input style="background:#e0c5c8" type="text" name="no" autocomplete="off" value="<?=$_SESSION["no"]?>"></p>
                 ✏️&nbsp;<input style="background: #e3d8c5" type="text" name="reg1" size="1" autocomplete="off" value="<?=$_SESSION["reg1"]?>">
                 <input style="background: #e3d8c5" type="text" name="reg2" size="1" autocomplete="off" value="<?=$_SESSION["reg2"]?>">
                 <input style="background: #e3d8c5" type="text" name="reg3" size="1" autocomplete="off" value="<?=$_SESSION["reg3"]?>">
@@ -73,7 +74,7 @@ if ($_SESSION["answer"]) {
 //show record
 	include "db.php";
 	$ans = $_SESSION["answer"];
-	$sql1 = "select * from note ";
+//	$sql1 = "select * from note ";
 	$result = mysqli_query($db, $sql1);
 	$sql = "select * from guess ORDER BY id DESC ";
 	$result = mysqli_query($db, $sql);

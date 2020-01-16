@@ -1,4 +1,3 @@
-<title>Login</title>
 <?php
 session_start();
 include 'style.html';
@@ -7,6 +6,7 @@ $sql1 = "truncate guess;";
 mysqli_query($db, $sql1);
 $_SESSION = array();
 ?>
+<title>Login</title>
 <body>
      <div class="flex-center position-ref full-height">
                 <div class="top-right home">

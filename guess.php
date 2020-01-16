@@ -1,9 +1,10 @@
 
 <?php
+session_start();
 include "db.php";
 include "judge.php";
 include "style.html";
-session_start();
+
 	$guess = $_POST["subject"];
     $no = $_SESSION["no"] = $_POST["no"]; $sure = $_SESSION["sure"] = $_POST["sure"];
 	$reg1 = $_SESSION["reg1"] = $_POST["reg1"]; $reg2 = $_SESSION["reg2"] = $_POST["reg2"]; $reg3 = $_SESSION["reg3"] = $_POST["reg3"]; $reg4 = $_SESSION["reg4"]  = $_POST["reg4"];
@@ -25,7 +26,7 @@ session_start();
     }else{
         $hint = $judge->check($guess,$ans);
         $answer = implode( $ans);
-        $sql1 = "INSERT guess(answer, guess, hint) VALUES ('$answer', '$guess', '$hint')";
+        $sql1 = "INSERT guess(guess, hint) VALUES ('$guess', '$hint')";
         if (!mysqli_query($db, $sql1)) {
             echo "insert error";
         }else if($hint == "Answer Correct"){
